@@ -8,26 +8,28 @@ import com.mongodb.Mongo;
 
 public class Test1 {
 	public void app() throws Exception{
-		//½¨Á¢Óë·þÎñÆ÷µÄÁ´½Ó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Mongo mongo = new Mongo("localhost",28017);
-		//µÃµ½Êý¾Ý¿â
+		//ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
 		DB db = mongo.getDB("db1");
-	//db.authenticate(username, password);//Èç¹ûÓÐÈ¨ÏÞ
-		//µÃµ½¼¯ºÏ
+	//db.authenticate(username, password);//ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+		//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
 		DBCollection collection = db.getCollection("user");
-		//µÃµ½±éÀú¼¯ºÏµÄÓÎ±ê
+		//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Î±ï¿½
 		DBCursor cursor = collection.find();
-		//±éÀú½á¹û¼¯
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		while(cursor.hasNext()){
 			DBObject object = cursor.next();
 			System.out.println(object);
 		}
-		//ÊÍ·ÅÕ¼ÓÃµÄ×ÊÔ´
+		//ï¿½Í·ï¿½Õ¼ï¿½Ãµï¿½ï¿½ï¿½Ô´
 		mongo.close();
 	}
 	public static void main(String[] args) throws Exception {
 		Test1 test = new Test1();
 		test.app();
+		
+		
 		
 	}
 
